@@ -2,6 +2,8 @@
 public class Elevator {
 	
 	private int elevatorId;
+	
+
 	private int currentFloor;
 	private int maxFloor;
 	private int noOfFloorsTravelled;
@@ -64,8 +66,14 @@ public class Elevator {
 	
 	/*Function to retire elevator , elevator controller can call this function to check if it is time to retire elevator*/
 	public boolean retireElevator() {
-		
 		return false;
+		}
+	public int getElevatorId() {
+		return elevatorId;
+	}
+
+	public void setElevatorId(int elevatorId) {
+		this.elevatorId = elevatorId;
 	}
 	
 	

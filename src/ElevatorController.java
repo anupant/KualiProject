@@ -34,4 +34,16 @@ public class ElevatorController {
 			}
 		}
 	
+	//The elevator controller will handle the request coming from request.java using the requirement given in 7
+	public void handleElevatorRequest() {
+		
+	}
+	
+	public void floorRequest(int elevatorId) {
+		
+		
+	}
+	
+	
+	
 	}
