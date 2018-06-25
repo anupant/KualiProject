@@ -78,6 +78,8 @@ public class Elevator {
 	
 	/*Function to retire elevator , elevator controller can call this function to check if it is time to retire elevator*/
 	public boolean retireElevator() {
+		/*Logic to calculate noOfTrips using noOfFloorsTravelled and maxFloor variable*/
+		
 		return false;
 		}
 	public int getElevatorId() {
@@ -103,6 +105,4 @@ public class Elevator {
 		this.direction = direction;
 	}
 
-	
-	
-	}
+}

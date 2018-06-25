@@ -44,22 +44,18 @@ public class ElevatorController {
 		}
 	
 	//The elevator controller will handle the request coming from request.java using the requirement given in 7
-	public void handleElevatorRequest(int floorOnRequestMade) {
+	public int handleElevatorRequest(int floorOnRequestMade) {
 	    //Check using occupiedElevators set that whether any occupied elevator is moving to that floor.
-		//If yes then sent that elevator to that floor 
-		
-		//Schedule the right elevator for that floor and then add floorrequest to that elevator list
-		//floorRequest(elevatorId);
-	
-	
+		//If yes then sent that elevator to that floor.
+		//Else choose one random still elevator which is unoccupied and sent it to the floor
+		//then call the floorRequest function 
+		return 0;
 	}
 	
-	/*Adding floor request to the elevator id*/
-	public void floorRequest(int elevatorId) {
+	/*The floor request will be serviced by the elevatorController once an elevator id has been selected*/
+	public void floorRequest(int elevatorId,int destinationFloorId) {
 		
 		
 	}
-	
-	
 	
 	}
