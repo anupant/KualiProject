@@ -2,17 +2,19 @@
 public class Elevator {
 	
 	private int elevatorId;
-	
-
-	private int currentFloor;
+    private int currentFloor;
 	private int maxFloor;
 	private int noOfFloorsTravelled;
 	private int noOfTrips;
+	//This will be used by elevator controllor to schedule
+	private boolean occupied;
 	
+	//Initially the elevator is not occupied
 	public Elevator(int elevatorId,int currentFloor,int maxFloor) {
 		this.elevatorId = elevatorId;
 		this.currentFloor = currentFloor;
 		this.maxFloor = maxFloor;
+		this.occupied = false;
 	}
 	
 	//Req 2 and 4: Elevator reporting up when it moves from floor to floor and cannot proceed above the top floor
@@ -74,6 +76,14 @@ public class Elevator {
 
 	public void setElevatorId(int elevatorId) {
 		this.elevatorId = elevatorId;
+	}
+	
+	public boolean isOccupied() {
+		return occupied;
+	}
+
+	public void setOccupied(boolean occupied) {
+		this.occupied = occupied;
 	}
 	
 	
