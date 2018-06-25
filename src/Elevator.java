@@ -5,16 +5,21 @@ public class Elevator {
     private int currentFloor;
 	private int maxFloor;
 	private int noOfFloorsTravelled;
+	//No of trips to understand whether to retire an elevator or not  
 	private int noOfTrips;
-	//This will be used by elevator controllor to schedule
+	//This will be used by elevator controller to handle the elevator request
 	private boolean occupied;
+	//This field is used to determine the direction of the elevator 0 means still,1 means going up and -1 
+	//means going down
+	private int direction;
 	
-	//Initially the elevator is not occupied
+	//Initially the elevator is not occupied and it is still
 	public Elevator(int elevatorId,int currentFloor,int maxFloor) {
 		this.elevatorId = elevatorId;
 		this.currentFloor = currentFloor;
 		this.maxFloor = maxFloor;
 		this.occupied = false;
+		this.direction = 0;
 	}
 	
 	//Req 2 and 4: Elevator reporting up when it moves from floor to floor and cannot proceed above the top floor
@@ -22,27 +27,32 @@ public class Elevator {
 		int currentFloor1 = getCurrentFloor();
 		if(currentFloor1 == maxFloor) {
 			System.out.println("Elevator reached maximum floor.It cannot go up, it should go down");
+			this.direction = -1;
 			return;
 		}
 		else {
 			currentFloor1 = currentFloor1 +1;
 			this.noOfFloorsTravelled = this.noOfFloorsTravelled +1;
+			//Moving up
+			this.direction = 1;
 			System.out.println("Elevator has reached" +currentFloor1);
 			setCurrentFloor(currentFloor1);
 		}
 	 }
 	
-	//Req 2 and 5 :Elevator reporting down when it moves from floor to floor and cannot proceed below the
+  //Req 2 and 5 :Elevator reporting down when it moves from floor to floor and cannot proceed below the
 	//ground floor
 	public void moveDown() {
 		int currentFloor1 = getCurrentFloor();
 		if(currentFloor1 == 1) {
 			System.out.println("Elevator reached minimum floor cannot go down, it should go up");
+			this.direction = 1;
 			return;
 		}
 		else {
 			currentFloor1 = currentFloor1 - 1;
 			this.noOfFloorsTravelled = this.noOfFloorsTravelled +1;
+			this.direction = -1;
 			System.out.println("Elevator has reached" +currentFloor1);
 			setCurrentFloor(currentFloor1);
 		}
@@ -85,6 +95,14 @@ public class Elevator {
 	public void setOccupied(boolean occupied) {
 		this.occupied = occupied;
 	}
+	public int getDirection() {
+		return direction;
+	}
+
+	public void setDirection(int direction) {
+		this.direction = direction;
+	}
+
 	
 	
 	}
