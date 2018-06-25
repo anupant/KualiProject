@@ -36,9 +36,14 @@ public class ElevatorController {
 	
 	//The elevator controller will handle the request coming from request.java using the requirement given in 7
 	public void handleElevatorRequest() {
-		
+	
+		//Schedule the right elevator for that floor and then add floorrequest to that elevator list
+		//floorRequest(elevatorId);
+	
+	
 	}
 	
+	/*Adding floor request to the elevator id*/
 	public void floorRequest(int elevatorId) {
 		
 		
